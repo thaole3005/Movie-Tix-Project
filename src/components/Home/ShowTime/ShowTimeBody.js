@@ -57,7 +57,7 @@ export default function ShowTimeBody(props) {
                                         <div className="d-flex my-2">
                                             <img src ={phim.hinhAnh} alt={phim.tenPhim} style={{width: 50, height: 50}}/>
                                             <div>
-                                                {phim.tenPhim}
+                                                {phim.tenPhim} 123
                                             </div>
                                             <hr/>
                                         </div>
