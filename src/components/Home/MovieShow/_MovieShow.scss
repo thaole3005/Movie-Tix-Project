@@ -1,0 +1,120 @@
+.ant-tabs {
+    overflow: visible !important;
+}
+
+.slick-next:before, .slick-prev:before {
+    content: " " !important;
+}
+
+.slick-arrow.slick-next {
+    right: -55px;
+}
+
+.slick-arrow.slick-prev {
+  
+    left:-55px;
+   
+}
+
+.slick-arrow.slick-next, .slick-arrow.slick-prev {
+    i {
+        color: #ccc;
+        font-size: 30px;
+        transition: all 0.3s;
+
+        &:hover {
+            color: $color-red-primary;
+            font-size: 40px;
+        }
+    }
+}
+
+.movie_item {
+    cursor: pointer;
+    border: none !important;
+    transition: all 0.3s;
+    // width: 300px;
+    
+    .card_header {
+        position: relative;
+    
+        
+        .movie_overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, black, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .open_trailer .open_trailer_btn {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s;
+        }
+
+        img.movie_img {
+            height: 280px;
+            object-fit: cover;
+            object-position: center center;
+        }
+    }
+    
+
+    .c10 {
+        padding:10px;
+        font-size: $fs-14;
+        background-color: $color-red-primary;
+        color: $color-white-0;
+        border-radius: $border-radius;
+        font-weight: 700;
+    }
+    
+    
+    .movie_name {
+        color: $color-black-1;
+        font-weight: 700;
+    }
+
+    .card-body {
+        position: relative;
+        padding: 10px;
+        // height: 70px;
+        .mua_ve_btn {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            opacity: 0;
+            height: 90%;
+            background-color: $color-red-primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            color: $color-white-0;
+            font-size: $fs-20;
+            transition: all 0.3s;
+            border-radius: 5px;
+        };
+        
+    }
+}
+
+.movie_item:hover .movie_overlay {
+    opacity: 1;
+}
+
+.movie_item:hover .mua_ve_btn {
+    width: 100%;
+    opacity: 1;
+}
+
+.movie_item:hover .open_trailer .open_trailer_btn {
+    opacity: 1;
+}

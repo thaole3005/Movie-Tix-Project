@@ -1,0 +1,35 @@
+
+@import './SlideItem';
+
+#homeCarousel {
+    .swiper-button-prev{
+        color: $color-red-primary;
+        opacity: 1;
+        left: 25px;
+    }
+
+    .swiper-button-prev.swiper-button-disabled {
+        color: $color-black-2;
+    }
+    .swiper-button-next {
+        color: $color-red-primary;
+        opacity: 1;
+        right: 25px;
+    }
+    
+    .swiper-button-next.swiper-button-disabled {
+        color: $color-black-2;
+        
+    }
+
+    .swiper-pagination-bullet {
+        background: $color-white-0;
+        opacity: 0.8;
+        width: 13px;
+        height: 13px;
+    }
+    
+    .swiper-pagination-bullet-active {
+        background: $color-red-primary;
+    }
+}

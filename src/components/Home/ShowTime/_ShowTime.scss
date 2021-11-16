@@ -1,0 +1,32 @@
+.showTime {
+    &_header {
+        padding-top: 120px;
+        background: url(../../../assets/img/back-news.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+
+.ant-tabs-nav {
+    // width: 300px;
+}
+
+.ant-tabs-tab {
+    padding: 5px 10px !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    span {
+        background:rgb(252, 79, 79) !important; 
+        font-weight: bold !important;;
+    }
+    & p:nth-child(1) {
+        color: red;
+    }
+    & p:nth-child(2) {
+        color: green;
+    }
+
+  
+
+}
