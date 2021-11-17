@@ -3,7 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { layThongTinHeThongRapAction } from "../../../redux/actions/QuanLyRapAction";
 import { Tabs, Radio, Space } from "antd";
 import { LayThongTinLichChieuHeThongRapAction } from './../../../redux/actions/QuanLyRapAction';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { NavLink } from 'react-router-dom';
+import moment from "moment";
+import { CalendarOutlined } from '@ant-design/icons';
+
 const { TabPane } = Tabs;
+
 
 export default function ShowTimeBody(props) {
 //   const { arrHeThongRap, thongTinLichChieuHeThongRap} = useSelector(state => state.QuanLyRapReducer);
@@ -53,15 +63,56 @@ export default function ShowTimeBody(props) {
 
                             {
                                 cumRap.danhSachPhim?.map((phim,index) => {
-                                    return <div key={index}>
-                                        <div className="d-flex my-2">
-                                            <img src ={phim.hinhAnh} alt={phim.tenPhim} style={{width: 50, height: 50}}/>
-                                            <div>
-                                                {phim.tenPhim} 123
-                                            </div>
-                                            <hr/>
-                                        </div>
+                                    return (
+                                      <div key = {index}>
+                                      <Accordion>
+                                        <AccordionSummary
+                                          expandIcon={<ExpandMoreIcon />}
+                                          aria-controls="panel1a-content"
+                                          id="panel1a-header"
+                                        >
+                                          <div className="d-flex my-2">
+                                               <img src ={phim.hinhAnh} alt={phim.tenPhim} style={{width: 50, height: 50}}/>
+                                               <div className="ml-2 phim_name" style ={{fontSize: 20,}}>
+                                                   {phim.tenPhim} 
+                                               </div>
+                                               <hr/>
+                                           </div>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                          {/* <Typography>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                          </Typography>
+                                        </AccordionDetails> */}
+
+                                          <div className="infor_phim_item">
+                                            <p>2D Digitial</p>
+                                              <div className="d-flex lich_chieu_list">
+                                              {
+                                                  phim.lstLichChieuTheoPhim.slice(0,10).map((lichChieuItem, index) => {
+                                                    return <>
+                                                        <span className="lich_chieu_item">
+                                                          <CalendarOutlined className="mr-2 text-danger" style ={{fontSize:18}}/>
+                                                          <NavLink to="/" className="lich_chieu_navlink">
+                                                          {moment(lichChieuItem.ngayChieuGioChieu).format('DD/MM/YYYY hh:mm A')}
+                                                          </NavLink>
+                                                        </span>
+                                                    </>
+                                                  
+                                                  })
+                                                }
+                                              </div>
+                                          </div>
+                                        </AccordionDetails> 
+                                       
+                                      </Accordion>
+                                    
                                     </div>
+                                    )
+                                    
+                                    
+
                                 })
                             }
 
@@ -76,19 +127,12 @@ export default function ShowTimeBody(props) {
 
 
   return (
-    <div>
+    <div className="container">
       <Tabs tabPosition={tabPosition}>
             {renderShowTime()}
-        {/* <TabPane tab="Tab 1" key="1">
-          Content of Tab 1
-        </TabPane>
-        <TabPane tab="Tab 2" key="2">
-          Content of Tab 2
-        </TabPane>
-        <TabPane tab="Tab 3" key="3">
-          Content of Tab 3
-        </TabPane> */}
+      
       </Tabs>
+
     </div>
   );
 }

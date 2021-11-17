@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LayDanhSachPhimAction } from './../../redux/actions/QuanLyPhimActions';
 import MovieShow from '../../components/Home/MovieShow/MovieShow';
 import ShowTime from './../../components/Home/ShowTime/ShowTime';
+import News from './../../components/Home/News/News';
+import AppTix from './../../components/Home/AppTix/AppTix';
 
 export default function Home(props) {
 
@@ -23,7 +25,9 @@ export default function Home(props) {
             <HomeCarousel className ="pb-5"/>
             <SearchBar arrMovie={arrMovie}/>
             <MovieShow arrMovie={arrMovie} {...props}/>
-            <ShowTime/>
+            {/* <ShowTime/> */}
+            <News/>
+            <AppTix/>
         </div>
     )
 }

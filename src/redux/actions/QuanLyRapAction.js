@@ -21,6 +21,7 @@ export const layThongTinLichChieuPhim = (maPhim) => {
 }
 
 
+
 export const layThongTinHeThongRapAction = (maPhim) => {
     // console.log("maPhim in layThongTinLichChieuPhim", maPhim);
     return async dispatch => {

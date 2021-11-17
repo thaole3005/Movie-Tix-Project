@@ -8,3 +8,10 @@
     padding: $pd-y $pd-x;
     border-radius: $radius;
   }
+
+  @mixin btnHover($bgColor, $borderColor, $txtColor) {
+    background: $bgColor;
+    border-color: $borderColor;
+    color: $txtColor;
+    transition: all 0.3s;
+  }
