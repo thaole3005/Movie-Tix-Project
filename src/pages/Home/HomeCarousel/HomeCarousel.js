@@ -44,9 +44,9 @@ export default function HomeCarousel() {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
       effect="slide"
-    //   autoplay={{
-    //     delay: 3000,
-    // }}
+      autoplay={{
+        delay: 3000,
+    }}
     >
 
       {

@@ -46,7 +46,23 @@
     }
 }
 
-.phone {
-    width: 50%;
-    margin: 0 auto;
+.app_tix_right {
+    .phone {
+        width: 50%;
+        margin: 0 auto;
+        position: relative;
+        .phone_slide {
+            position: absolute;
+            top: 11px;
+            left: 7px;
+            right: 7px;
+            bottom: 15px;
+            img.img_phone_slide {
+                border-radius: 30px;
+            }
+        }
+    }
+
+    
 }
+

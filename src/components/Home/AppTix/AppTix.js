@@ -4,6 +4,18 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import phone from '../../../assets/img/mobile.png';
 
+// Direct React component imports
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+
+// Styles must use direct files imports
+import 'swiper/swiper.scss'; // core Swiper
+import 'swiper/modules/navigation/navigation.scss'; // Navigation module
+import 'swiper/modules/pagination/pagination.scss'; // Pagination module
+import 'swiper/modules/autoplay/autoplay.scss'; // Pagination module
+
+import { Autoplay } from 'swiper';
+import arrImgSlidePhone from './arrImgSlidePhone.json';
+
 export default function AppTix() {
   return (
     <div id="app_tix" className="app_tix">
@@ -45,7 +57,34 @@ export default function AppTix() {
             <div className="app_tix_right">
                 <div className="phone">
                     <img src={phone} className="w-100"/>
+                    <div className="phone_slide">
+                    <Swiper
+                    className="text-info"
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        modules={[ Autoplay ]}
+                        autoplay={{
+                            "delay": 2500,
+                            "disableOnInteraction": false
+                          }}
+                        onSlideChange={() => console.log('slide change')}
+                        onSwiper={(swiper) => console.log(swiper)}
+                    >
+                        {
+                            arrImgSlidePhone.map((item, index) => {
+                                return <>
+                                    <SwiperSlide>
+                                        <img src={item.imgSlide} className="w-100 img_phone_slide"/>
+                                    </SwiperSlide>
+
+                                </>
+                            })
+                        }
+                    </Swiper>
                 </div>
+                </div>
+
+                
             </div>
           </Grid>
         </Grid>

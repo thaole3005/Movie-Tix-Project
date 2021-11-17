@@ -8,6 +8,9 @@ import ShowTime from './../../components/Home/ShowTime/ShowTime';
 import News from './../../components/Home/News/News';
 import AppTix from './../../components/Home/AppTix/AppTix';
 
+
+
+
 export default function Home(props) {
 
     const {arrMovie} = useSelector(state => state.QuanLyPhimReducer);
@@ -28,6 +31,7 @@ export default function Home(props) {
             {/* <ShowTime/> */}
             <News/>
             <AppTix/>
+
         </div>
     )
 }
