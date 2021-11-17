@@ -1,0 +1,52 @@
+
+#app_tix {
+    background-image: url(../../../assets/img/backapp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 6rem 0;
+    background-attachment: fixed;
+    position: relative;
+    .app_tix_left {
+       
+        h2 {
+            @include styleText($color-white-0, $fs-32);
+        }
+
+        p {
+            @include styleText($color-white-0,$fs-20);
+        }
+
+        button.btn_download {
+            @include styleButton($color-red-primary, none, 10px, 15px, $border-radius);
+            a {
+
+                @include styleText($color-white-0, $fs-20);
+            }
+
+            &:hover {
+                @include btnHover($color-white-0, $color-red-primary, $color-white-0);
+                a {
+
+                    @include styleText($color-red-primary, $fs-20);
+                }
+            }
+        };
+
+        a:nth-child(1) {
+            margin-left: 5px;
+            margin-right: 5px;
+            color: $color-red-title;
+            font-weight: bold;
+        }
+        a:nth-child(2) {
+            margin-left: 5px;
+            color: $color-red-title;
+            font-weight: bold;
+        }
+    }
+}
+
+.phone {
+    width: 50%;
+    margin: 0 auto;
+}

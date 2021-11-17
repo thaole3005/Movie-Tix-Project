@@ -1,5 +1,5 @@
 .showTime {
-    &_header {
+    &_header, &_footer {
         padding-top: 120px;
         background: url(../../../assets/img/back-news.png);
         background-size: cover;
@@ -27,6 +27,29 @@
         color: green;
     }
 
-  
+}
 
+
+.infor_phim_item {
+    .lich_chieu_list {
+        flex-wrap: wrap;
+        .lich_chieu_item {
+            padding:7px;
+            border: 1px solid rgba(29, 233, 202, 0.5);
+            margin-top: 15px;
+            margin-left: 10px;
+            background-color: rgb(177, 171, 171);
+            border-radius:4px;
+            display: flex;
+            align-items: center;
+            a {
+                color: white;
+            }
+        }
+    }
+}
+
+
+.phim_name {
+    color: $color-red-primary;
 }
