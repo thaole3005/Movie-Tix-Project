@@ -1,4 +1,4 @@
-import { LAY_DANH_SACH_FULL_PHIM } from './../actions/types/QuanLyPhimType';
+import { LAY_DANH_SACH_FULL_PHIM, LAY_THONG_TIN_PHIM } from './../actions/types/QuanLyPhimType';
 
 const initialState = {
     arrBanner: [
@@ -62,6 +62,7 @@ const initialState = {
 
     arrMovie: [],
     arrMovieDefault: [],
+    movieInfor: {},
 }
 
 export const QuanLyPhimReducer = (state = initialState, action) => {
@@ -71,6 +72,11 @@ export const QuanLyPhimReducer = (state = initialState, action) => {
       state.arrMovie = action.arrMovie;
       state.arrMovieDefault = action.arrMovie;
       return { ...state}
+    }
+
+
+    case LAY_THONG_TIN_PHIM: {
+      return {...state, movieInfor: action.movieInfor};
     }
 
     default:

@@ -16,11 +16,14 @@
 //!Layout
 //HomeTemplate
 @import '../templates/HomeTemplate/Layout/Header/header';
+@import '../templates/HomeTemplate/Layout/Footer/Footer';
+
 
 
 
 //Page
 @import '../pages/Home/HomeCarousel/HomeCarousel';
+@import '../pages/MovieDetail/MovieDetail';
 
 
 

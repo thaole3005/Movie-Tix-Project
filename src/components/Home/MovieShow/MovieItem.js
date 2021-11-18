@@ -1,9 +1,12 @@
 import React, {useState} from "react";
 import playBtn from '../../../assets/img/play.png';
 import ModalTrailer from './../../../pages/Home/HomeCarousel/ModalTrailer';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
+
+
 
 export default function MovieItem(props) {
+    const history = useHistory();
 
     const [modalTrailerShow, setModalTrailerShow] =useState(false);
     const {detailMovieItem} = props;
@@ -25,7 +28,9 @@ export default function MovieItem(props) {
                 <span className="c10">C10</span>
                 <p className="movie_name ml-2">{detailMovieItem.tenPhim.slice(0,20)}</p>
             </div>
-            <div className="mua_ve_btn">
+            <div className="mua_ve_btn" onClick = {() => {
+                history.push(`moviedetail/${detailMovieItem.maPhim}`)
+            }}>
                 <span>Mua vé</span>
             </div>
         </div>
