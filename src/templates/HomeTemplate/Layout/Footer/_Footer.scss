@@ -1,0 +1,48 @@
+
+
+.footer_hometemplate {
+    padding: 25px;
+    background-color:#222;
+    .col-lg-4 {
+        padding: 0 30px;
+    }
+    
+    .footer_top {
+        .footer_title {
+            @include styleText($color-white-0, $fs-18);
+            text-align: center;
+            text-transform: uppercase;
+        }
+        a {
+            @include styleText($color-black-3, $fs-14);
+            text-decoration: none;
+            transition: color 0.3s;
+            &:hover {
+                @include styleText($color-white-0, $fs-14);
+            }
+        }
+
+        .footer_section_doitac {
+
+            .partner_list {
+                flex-wrap: wrap;
+              
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius:50%;
+                    
+                }
+            }
+        }
+        
+        .footer_icon {
+            justify-content: center;
+            img {
+                width: 30px;
+                height: 30px;
+                margin: 0 10px;
+            }
+        }
+    }
+}

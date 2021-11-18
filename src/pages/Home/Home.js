@@ -24,11 +24,11 @@ export default function Home(props) {
     }, [])
     
     return (
-        <div style={{paddingTop: 70, height: 2000}} >
+        <div style={{paddingTop: 70}} >
             <HomeCarousel className ="pb-5"/>
             <SearchBar arrMovie={arrMovie}/>
             <MovieShow arrMovie={arrMovie} {...props}/>
-            {/* <ShowTime/> */}
+            <ShowTime/>
             <News/>
             <AppTix/>
 
