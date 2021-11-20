@@ -36,3 +36,5 @@ export const STATUS_CODE = {
     NOT_FOUND: 400,
     SERVER_ERROR: 500,
 }
+
+    export const TODAY = new Date ("December 1, 2021");

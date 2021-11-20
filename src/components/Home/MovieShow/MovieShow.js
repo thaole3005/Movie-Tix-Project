@@ -9,8 +9,8 @@ const items = {
     coming: "Sắp chiếu",
   };
 
-const arrType = Object.values(items);
-console.log("arrType", arrType);
+const arrType = Object.values(items);     //['Đang chiếu', 'Sắp chiếu']
+// console.log("arrType", arrType);
 
 
 const tabMovieType = (tabType) => {
