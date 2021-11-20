@@ -1,7 +1,7 @@
 import React,{useState, useMemo} from "react";
-import playBtn from '../../assets/img/play.png';
-import PopupTrailerHOC from '../../HOC/PopupHOC';
-import { OPEN_POPUP_TRAILER } from './../../redux/actions/types/QuanLyPopupType';
+import playBtn from '../../../assets/img/play.png';
+import PopupTrailerHOC from '../../../HOC/PopupHOC';
+import { OPEN_POPUP_TRAILER } from '../../../redux/actions/types/QuanLyPopupType';
 import { useDispatch } from 'react-redux';
 
 
@@ -9,18 +9,19 @@ export default function MovieTopSection(props) {
 
 
   const { movieInfor } = props;
-  console.log(movieInfor)
+  // console.log(movieInfor)
 
   const dispatch = useDispatch();
 
 
   const renderNgayKhoiChieu = () => {
+    // console.log("movieInfor.ngayKhoiChieu",new Date(movieInfor.ngayKhoiChieu).getMonth() )
     let ngayKhoiChieu = new Date(movieInfor.ngayKhoiChieu);
-    console.log("ngayKhoiChieu", ngayKhoiChieu);
-    let day = ngayKhoiChieu.getDay();
+    // console.log("ngayKhoiChieu", ngayKhoiChieu);
+    let day = ngayKhoiChieu.getDate();
     let month = ngayKhoiChieu.getMonth();
     let year = ngayKhoiChieu.getFullYear();
-    console.log(day, month, year);
+    // console.log(day, month, year);
     if(day < 10) {
         day = `0${day}`;
     }
@@ -28,7 +29,7 @@ export default function MovieTopSection(props) {
         month = `0${month}`;
     }
     let finalNgayKhoiChieu = `${day}.${month}.${year}`;
-    console.log("finalNgayKhoiChieu", finalNgayKhoiChieu);
+    // console.log("finalNgayKhoiChieu", finalNgayKhoiChieu);
     return finalNgayKhoiChieu;
   }
 

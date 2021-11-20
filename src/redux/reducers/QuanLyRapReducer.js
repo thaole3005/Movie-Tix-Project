@@ -4,6 +4,7 @@ const initialState = {
     thongTinLichChieuPhim: {},
     arrHeThongRap: [],
     thongTinLichChieuHeThongRap: [],
+    movieLichChieuInfor: {},
 }
 
 export const QuanLyRapReducer = (state = initialState, action) => {
@@ -24,6 +25,12 @@ export const QuanLyRapReducer = (state = initialState, action) => {
         state.thongTinLichChieuHeThongRap = action.thongTinLichChieuHeThongRap;
         return { ...state };
     }
+
+    // case LAY_THONG_TIN_LICH_CHIEU_PHIM: {
+    //     state.movieLichChieuInfor = action.movieLichChieuInfor;
+    //     return { ...state };
+    // }
+
     default:
         return state
     }

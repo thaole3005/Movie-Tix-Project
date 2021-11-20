@@ -1,0 +1,18 @@
+
+
+.lich_chieu_section {
+    color: $color-black-0;
+
+    .list_date_tab {
+        background-color: #f5f5f5;
+        // color: white !important;
+        .MuiSvgIcon-root.MuiSvgIcon-fontSizeSmall.css-ptiqhd-MuiSvgIcon-root {
+            color: $color-black-0;
+            font-size: 30px;
+        }
+
+        .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+            color: $color-red-primary;
+        }
+    }
+}
