@@ -6,7 +6,6 @@ import { LayThongTinLichChieuHeThongRapAction } from './../../../redux/actions/Q
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { NavLink } from 'react-router-dom';
 import moment from "moment";
@@ -80,11 +79,7 @@ export default function ShowTimeBody(props) {
                                            </div>
                                         </AccordionSummary>
                                         <AccordionDetails>
-                                          {/* <Typography>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                                            malesuada lacus ex, sit amet blandit leo lobortis eget.
-                                          </Typography>
-                                        </AccordionDetails> */}
+                                        
 
                                           <div className="infor_phim_item">
                                             <p>2D Digitial</p>

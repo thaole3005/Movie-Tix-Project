@@ -7,6 +7,7 @@ import Loading from './components/Loading/Loading';
 import HomeTemplate from './templates/HomeTemplate/HomeTemplate';
 import Home from './pages/Home/Home';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
+import BookingMovie from './pages/BookingMovie/BookingMovie';
 export const history = createBrowserHistory();
 
 
@@ -18,7 +19,7 @@ function App() {
       <Switch>
           <HomeTemplate exact path ="/home" Component = {Home}/>
           <HomeTemplate exact path ="/moviedetail/:movieId" Component = {MovieDetail}/>
-
+          <Route exact path ="/booking/:movieId" component ={BookingMovie}/>
 
           <HomeTemplate exact path ="/" Component = {Home}/>
 
