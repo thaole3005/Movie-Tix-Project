@@ -1,4 +1,10 @@
+.css-1hyaja9 {
+    width: 800px !important;
+}
 
+.movie_bottom_section {
+    margin-top: 5rem;
+}
 
 .lich_chieu_section {
     color: $color-black-0;
@@ -13,6 +19,70 @@
 
         .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
             color: $color-red-primary;
+        }
+    }
+
+    .ant-tabs-left > .ant-tabs-content-holder > .ant-tabs-content > .ant-tabs-tabpane {
+        padding-left: 0;
+    }
+    .ant-tabs-tab {
+        height:75px;
+    }
+    .ant-tabs-tab + .ant-tabs-tab {
+        margin: 0;
+    }
+}
+
+
+ .ant-tabs-ink-bar {
+    
+    background: red !important;
+  }
+
+
+
+  .thong_tin_section {
+     .thong_tin_content {
+         display: flex !important;
+         justify-content: space-between;
+         .thong_tin_content_left {
+             width: 35%;
+             ul li {
+                 display: flex;
+                 justify-content: space-between;
+             }
+         }
+
+         .thong_tin_content_right {
+            width: 55%
+         }
+     }
+  }
+
+
+
+
+
+//   danh_gia_Section
+#full-width-tabpanel-2 {
+    background-color: $color-white-0;
+    margin-top: 2rem;
+}
+
+
+.danh_gia_section {
+    .danh_gia_click  {
+
+        display: flex;
+        align-items: center;
+        p {
+            margin-bottom: 0 !important;
+        }
+
+        .start_group {
+            .icon-star {
+                color: $color-red-primary;
+            }
         }
     }
 }
