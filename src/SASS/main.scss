@@ -1,17 +1,9 @@
-
-
 //!Helper
-@import './Helper/variable';
-@import './Helper/mixin';
-
+@import "./Helper/variable";
+@import "./Helper/mixin";
 
 //!Base
 @import "./Base/reset";
-
-
-
-
-
 
 //!Layout
 //HomeTemplate
@@ -26,10 +18,15 @@
 @import '../pages/MovieDetail/MovieDetail';
 
 
+@import "../templates/HomeTemplate/Layout/Header/header";
+
+//Page
+@import "../pages/Home/HomeCarousel/HomeCarousel";
+@import "../pages/SignIn/SignIn";
 
 //!components:
 //* page Home
-@import '../components/Home/SearchBar/SearchBar';
-@import '../components/Home/MovieShow/MovieShow';
-@import '../components/Home/ShowTime/ShowTime';
-@import '../components/Home/AppTix/AppTix';
+@import "../components/Home/SearchBar/SearchBar";
+@import "../components/Home/MovieShow/MovieShow";
+@import "../components/Home/ShowTime/ShowTime";
+@import "../components/Home/AppTix/AppTix";
