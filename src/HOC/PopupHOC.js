@@ -17,7 +17,7 @@ export default function PopupHOC(props) {
     return (
         <>
              <Modal
-      {...props} show ={popupShow} onHide = {popupShow}
+      {...props} show ={popupShow} onHide = {() => dispatch({type: CLOSE_POPUP_TRAILER})}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered

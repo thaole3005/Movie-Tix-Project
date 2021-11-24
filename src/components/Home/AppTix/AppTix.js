@@ -67,7 +67,7 @@ export default function AppTix() {
                             "delay": 2500,
                             "disableOnInteraction": false
                           }}
-                        onSlideChange={() => console.log('slide change')}
+                        
                         onSwiper={(swiper) => console.log(swiper)}
                     >
                         {

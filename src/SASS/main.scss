@@ -5,23 +5,28 @@
 //!Base
 @import "./Base/reset";
 
+
+//!component
+@import "./../components/Button/styleButton.scss";
+
+
+
 //!Layout
 //HomeTemplate
 @import '../templates/HomeTemplate/Layout/Header/header';
 @import '../templates/HomeTemplate/Layout/Footer/Footer';
-
-
-
-
-//Page
-@import '../pages/Home/HomeCarousel/HomeCarousel';
-@import '../pages/MovieDetail/MovieDetail';
-
-
 @import "../templates/HomeTemplate/Layout/Header/header";
+
+
+
+
+
+
+
 
 //Page
 @import "../pages/Home/HomeCarousel/HomeCarousel";
+@import '../pages/MovieDetail/MovieDetail';
 @import "../pages/SignIn/SignIn";
 
 //!components:

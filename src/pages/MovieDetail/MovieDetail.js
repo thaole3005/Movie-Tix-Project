@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MovieTopSection from './MovieTopSection/MovieTopSection';
+import MovieTopSection from './MovieTopSection/MovieTopSection.jsx';
 import MovieBottomSection from './MovieBottomSection/MovieBottomSection';
 import { layThongTinPhimAction } from '../../redux/actions/QuanLyPhimActions';
 

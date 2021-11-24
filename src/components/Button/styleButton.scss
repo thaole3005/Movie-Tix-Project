@@ -1,0 +1,15 @@
+.button_default {
+    text-transform: uppercase;
+    background: linear-gradient(to left, #fb4226, #ce3017 100%);
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s all;
+    &:hover {
+        background-color: #fa5238;
+        opacity: 0.7;
+        transition: 0.3s all;
+    }
+}

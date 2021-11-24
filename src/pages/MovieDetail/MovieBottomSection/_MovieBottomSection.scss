@@ -1,14 +1,22 @@
 .css-1hyaja9 {
-    width: 800px !important;
+    width: 700px !important;
 }
 
 .movie_bottom_section {
     margin-top: 5rem;
+    padding-bottom: 1.5rem;
+    .css-19kzrtu {
+        padding: 0px;
+    }
 }
 
 .lich_chieu_section {
     color: $color-black-0;
-
+    position: relative;
+    margin-top: 2rem;
+    .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+        margin: 0;
+    }
     .list_date_tab {
         background-color: #f5f5f5;
         // color: white !important;
@@ -42,6 +50,7 @@
 
 
   .thong_tin_section {
+      margin-top: 2rem;
      .thong_tin_content {
          display: flex !important;
          justify-content: space-between;
@@ -65,16 +74,17 @@
 
 //   danh_gia_Section
 #full-width-tabpanel-2 {
-    background-color: $color-white-0;
     margin-top: 2rem;
 }
 
 
 .danh_gia_section {
     .danh_gia_click  {
-
+        background-color: $color-white-0;
+        padding: 20px;
         display: flex;
         align-items: center;
+        cursor: pointer;
         p {
             margin-bottom: 0 !important;
         }
@@ -85,4 +95,103 @@
             }
         }
     }
+
+    .cmt_group {
+       
+        p{
+            margin-bottom: 0;
+        }
+        .cmt_item {
+            margin-top: 1.5rem;
+            background-color: $color-white-0;
+            padding:15px;
+            .cmt_item_header {
+                display: flex;
+                align-items: center;
+                .cmt_item_name {
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+
+                .cmt_item_time {
+                    @include styleText($color-black-3, $fs-12)
+                }
+            }
+
+            .cmt_item_start {
+                margin-left: auto;
+                p {
+                    font-size:14px;
+                }
+                i {
+                    font-size:14px;
+                    color: $color-red-primary;
+                }
+            }
+        }
+    }
+}
+
+
+
+.rating_popup_section {
+    // margin-top: 1rem;
+    padding: 15px;
+    .rating_popup {
+            width: 180px;
+            input {
+                display: none !important;
+            
+            }
+            & > label:before {
+                content: "★";
+                
+            }
+            & > label {
+                font-size: 20px;
+                color: $color-black-3;
+            }
+        
+            input:checked ~ label {
+                color: $color-red-primary;
+                float: right;
+        
+            }
+        
+            input:not(:checked) + label {
+                float: right;
+            }
+    }
+        
+    .rating_popup_body {
+        .rating_popup_textarea {
+            padding:15px;
+        }
+    }
+    
+
+    .btn_popup_group {
+        .btn_dong_popup {
+          
+                @include styleButton(#e0e0e0, transparent,9px,15px,3px);
+                
+            &:hover {
+                @include btnHover(#d5d5d5,  transparent, rgb(20, 15, 15));
+            }
+        }
+        .btn_dang_popup {
+            margin-left: 10px;
+                @include styleButton($color-red-title, transparent,10px,15px,3px);
+                border: none !important;
+                color: $color-white-0;
+            &:hover {
+                @include btnHover($color-red-primary,  transparent, $color-white-0);
+                background-color: #e60000;
+            }
+        }
+    }
+}
+
+.clearfix {
+        overflow: auto;
 }
