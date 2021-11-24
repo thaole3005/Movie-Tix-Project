@@ -3,6 +3,7 @@ import playBtn from '../../../assets/img/play.png';
 import PopupTrailerHOC from '../../../HOC/PopupHOC';
 import { OPEN_POPUP_TRAILER } from '../../../redux/actions/types/QuanLyPopupType';
 import { useDispatch } from 'react-redux';
+import Button from '../../../components/Button/Button';
 
 
 export default function MovieTopSection(props) {
@@ -82,6 +83,7 @@ export default function MovieTopSection(props) {
                     {movieInfor.dangChieu ? "Đang chiếu" : "Sắp chiếu"}
                 </h4>
                 <p>100 phút - 0 IMDb - 2D/Digital</p>
+                {/* <Button name="mua vé"/> */}
             </div>
 
             <div className="col-3"></div>

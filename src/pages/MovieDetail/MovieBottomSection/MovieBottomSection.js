@@ -7,11 +7,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
 import LichChieu from './LichChieu/LichChieu';
 import ThongTin from './ThongTin';
-import DanhGia from './DanhGia';
+import DanhGia from './DanhGia/DanhGia';
 
 
 function TabPanel(props) {

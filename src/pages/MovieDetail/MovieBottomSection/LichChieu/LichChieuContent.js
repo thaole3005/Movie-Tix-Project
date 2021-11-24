@@ -147,7 +147,7 @@ export default function LichChieuContent() {
   };
 
   return (
-    <div className="mt-5 bg-white">
+    <div className="bg-white">
       <Tabs tabPosition={"left"} onChange={callback}>
         {renderLichChieuContent()}
       </Tabs>
