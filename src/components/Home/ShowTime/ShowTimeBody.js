@@ -89,7 +89,7 @@ export default function ShowTimeBody(props) {
                                                     return <>
                                                         <span className="lich_chieu_item">
                                                           <CalendarOutlined className="mr-2 text-danger" style ={{fontSize:18}}/>
-                                                          <NavLink to="/" className="lich_chieu_navlink">
+                                                          <NavLink to={`/ticketroom/${lichChieuItem.maLichChieu}`} className="lich_chieu_navlink">
                                                           {moment(lichChieuItem.ngayChieuGioChieu).format('DD/MM/YYYY hh:mm A')}
                                                           </NavLink>
                                                         </span>

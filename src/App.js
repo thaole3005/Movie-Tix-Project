@@ -25,7 +25,7 @@ function App() {
           path="/moviedetail/:movieId"
           Component={MovieDetail}
         />
-        <Route exact path="/booking/:movieId" component={BookingMovie} />
+        <Route exact path="/ticketroom/:maLichChieu" component={BookingMovie} />
 
         <HomeTemplate exact path="/" Component={Home} />
 

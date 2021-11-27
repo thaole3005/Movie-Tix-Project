@@ -1,0 +1,29 @@
+@import "./BookingProgress/BookingProgress.scss";
+@import "./TicketRoom/TicketRoom.scss";
+@import './BookingForm/BookingForm.scss';
+
+
+.booking_movie_section {
+    p {
+        margin-bottom: 0;;
+    }
+    .booking_movie_bg {
+        width: 100%;
+        height: auto;
+        background-image: url(../../assets/img/backapp.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -10;
+    }
+
+
+    .booking_movie_content {
+        width: 70%;
+    }
+}
