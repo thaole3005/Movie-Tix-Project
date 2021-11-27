@@ -103,7 +103,7 @@ export default function LichChieuContent() {
                                   style={{ fontSize: 18 }}
                                 />
                                 <NavLink
-                                  to={`/booking/${match.params.movieId}`}
+                                  to={`/ticketroom/${lichChieuItem.maLichChieu}`}
                                   className="lich_chieu_navlink"
                                 >
                                   {moment(
