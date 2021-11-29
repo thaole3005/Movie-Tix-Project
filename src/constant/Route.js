@@ -11,11 +11,11 @@ export const userRouter = [
     component: React.lazy(() => import("../pages/SignIn/SignIn")),
   },
   {
-    path: "/movie/:id",
+    path: "/moviedetail/:movieId",
     component: React.lazy(() => import("../pages/MovieDetail/MovieDetail")),
   },
   {
-    path: "/bookingMovie/:id",
+    path: "/ticketroom/:maLichChieu",
     component: React.lazy(() => import("../pages/BookingMovie/BookingMovie")),
   },
 ];
