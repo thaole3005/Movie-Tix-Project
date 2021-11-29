@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import MovieTopSection from './MovieTopSection/MovieTopSection.jsx';
-import MovieBottomSection from './MovieBottomSection/MovieBottomSection';
 import { layThongTinPhimAction } from '../../redux/actions/QuanLyPhimActions';
+import MovieBottomSection from './MovieBottomSection/MovieBottomSection';
+import MovieTopSection from './MovieTopSection/MovieTopSection.jsx';
 
 export default function MovieDetail(props) {
     // console.log("props in MovieDetail", props);
