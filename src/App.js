@@ -1,38 +1,56 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { BrowserRouter, Route, Router, Switch } from "react-router-dom";
 //Thư viện giúp chuyển hướng trang ở các file không phải là component
+import { Spin } from "antd";
 import { createBrowserHistory } from "history";
-import Loading from "./components/Loading/Loading";
-import HomeTemplate from "./templates/HomeTemplate/HomeTemplate";
-import Home from "./pages/Home/Home";
-import MovieDetail from "./pages/MovieDetail/MovieDetail";
-import BookingMovie from "./pages/BookingMovie/BookingMovie";
+import { Suspense } from "react";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
+import { userRouter } from "./constant/Route";
+import PublicRoute from "./routes/PublicRoute";
 
-import SignIn from "./pages/SignIn/SignIn";
 export const history = createBrowserHistory();
 
 function App() {
   return (
-    <Router history={history}>
-      {/* <Loading/> */}
+    <Suspense fallback={<Spin />}>
+      <BrowserRouter>
+        <Switch>
+          {userRouter.map((user, index) => {
+            const Component = user.component;
+            return (
+              <Route
+                exact
+                key={`router-user-${index}`}
+                path={user.path}
+                render={() => (
+                  <PublicRoute>
+                    <Component />
+                  </PublicRoute>
+                )}
+              />
+            );
+          })}
 
-      <Switch>
-        <HomeTemplate exact path="/home" Component={Home} />
-        <HomeTemplate
-          exact
-          path="/moviedetail/:movieId"
-          Component={MovieDetail}
-        />
-        <Route exact path="/ticketroom/:maLichChieu" component={BookingMovie} />
+          {false ? <Redirect to="/admin" /> : <Redirect to="/" />}
 
-        <HomeTemplate exact path="/" Component={Home} />
+          {/* <HomeTemplate exact path="/home" Component={Home} />
+          <HomeTemplate
+            exact
+            path="/moviedetail/:movieId"
+            Component={MovieDetail}
+          />
+          <Route
+            exact
+            path="/ticketroom/:maLichChieu"
+            component={BookingMovie}
+          />
 
-        <HomeTemplate exact path="/" Component={Home} />
-        <Route exact path="/login" render={() => <SignIn />} />
-      </Switch>
-    </Router>
+          <HomeTemplate exact path="/" Component={Home} />
+
+          <HomeTemplate exact path="/" Component={Home} />
+          <Route exact path="/login" render={() => <SignIn />} /> */}
+        </Switch>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

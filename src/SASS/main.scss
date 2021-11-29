@@ -5,30 +5,19 @@
 //!Base
 @import "./Base/reset";
 
-
 //!component
-@import "./../components/Button/Button.scss";
 @import "./../components/Radio/Radio.scss";
-
-
 
 //!Layout
 //HomeTemplate
-@import '../templates/HomeTemplate/Layout/Header/header';
-@import '../templates/HomeTemplate/Layout/Footer/Footer';
 @import "../templates/HomeTemplate/Layout/Header/header";
-
-
-
-
-
-
-
+@import "../templates/HomeTemplate/Layout/Footer/Footer";
+@import "../templates/HomeTemplate/Layout/Header/header";
 
 //Page
 @import "../pages/Home/HomeCarousel/HomeCarousel";
-@import '../pages/MovieDetail/MovieDetail';
-@import '../pages/BookingMovie/BookingMovie.scss';
+@import "../pages/MovieDetail/MovieDetail";
+@import "../pages/BookingMovie/BookingMovie.scss";
 @import "../pages/SignIn/SignIn";
 
 //!components:
