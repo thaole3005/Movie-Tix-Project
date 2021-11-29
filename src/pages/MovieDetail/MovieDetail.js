@@ -5,7 +5,7 @@ import MovieBottomSection from './MovieBottomSection/MovieBottomSection';
 import MovieTopSection from './MovieTopSection/MovieTopSection.jsx';
 
 export default function MovieDetail(props) {
-    // console.log("props in MovieDetail", props);
+    console.log("props in MovieDetail", props);
     const {movieInfor} = useSelector(state => state.QuanLyPhimReducer);
     // console.log("movieInfor", movieInfor)
     const dispatch = useDispatch();
