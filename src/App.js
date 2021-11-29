@@ -21,9 +21,9 @@ function App() {
                 exact
                 key={`router-user-${index}`}
                 path={user.path}
-                render={() => (
+                render={(propsRoute) => (
                   <PublicRoute>
-                    <Component />
+                    <Component {...propsRoute}/>
                   </PublicRoute>
                 )}
               />
