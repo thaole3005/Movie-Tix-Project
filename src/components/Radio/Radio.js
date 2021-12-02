@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {memo} from 'react';
 import imgATM from '../../assets/img/ATM.png';
 import imgVISA from '../../assets/img/visa_mastercard.png';
 import imgCASH from '../../assets/img/cash.png';
@@ -29,14 +29,16 @@ const renderInfoRadio = (value) => {
 
 
 
-export default function Radio(props) {
+function Radio(props) {
+  const {handleChangeHowtopay} = props;
 
     const {name, value} = props;
     const {src, description} = renderInfoRadio(value);
 
+
     return (
         <div className="radio_item">
-            <input className ="radio_item_input" type="radio" id={value} name={name}/>
+            <input className ="radio_item_input" type="radio" id={value} name={name} value={value} onChange ={handleChangeHowtopay}/>
             <label className ="radio_item_label" htmlFor={value}>
                 <div className="pay_img">
                     <img src={src}/>
@@ -46,3 +48,5 @@ export default function Radio(props) {
         </div>
     )
 }
+
+export default memo(Radio);

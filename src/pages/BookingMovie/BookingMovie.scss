@@ -1,9 +1,11 @@
 @import "./BookingProgress/BookingProgress.scss";
 @import "./TicketRoom/TicketRoom.scss";
 @import './BookingForm/BookingForm.scss';
+@import './BookingResult/BookingResult.scss';
 
 
 .booking_movie_section {
+    position: relative;
     p {
         margin-bottom: 0;;
     }

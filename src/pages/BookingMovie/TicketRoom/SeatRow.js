@@ -1,5 +1,5 @@
 import React, {memo} from 'react';
-import { useDispatch } from 'react-redux';
+import {useSelector, useDispatch } from 'react-redux';
 import { chonGheAction } from '../../../redux/actions/QuanLyDatVeAction';
 
 
@@ -22,6 +22,9 @@ const arrayLetter = [
 function SeatRow(props) {
     const {arayItem, indexRow, arrGheDangChon} = props;
     const letter = arrayLetter[indexRow];
+
+    const {profile} = useSelector((state) => state.authReducer);
+
 
     const dispatch = useDispatch();
 
@@ -51,11 +54,17 @@ function SeatRow(props) {
                     
                     let classGheVip = ghe.loaiGhe === "Vip" ? "gheVip" : "";
                     let classGheDaDat = ghe.daDat === true ? "gheDaDat" : "";
+
+                    let classGheToiDaDat = "";
+                    if(ghe.taiKhoanNguoiDat === profile?.taiKhoan) {
+                        classGheToiDaDat = "gheToiDaDat";
+                    }
+
                     let disabledGhe = ghe.daDat;
 
                     return (
                         <button key={index}
-                            className={`ghe ${classGheVip} ${classGheDaDat} ${classGheDangChon}`} 
+                            className={`ghe ${classGheVip} ${classGheDaDat} ${classGheDangChon} ${classGheToiDaDat}`} 
                             onClick ={() => {
                                 dispatch(chonGheAction(ghe, letter));
                             }}
@@ -75,7 +84,7 @@ function SeatRow(props) {
                             ></path>
                             </svg>
                             {
-                               checkGheDangChon(ghe) ? <span class="ten_ghe">{`${letter}${ghe.tenGhe}`}</span> : ''
+                               checkGheDangChon(ghe) ? <span className="ten_ghe">{`${letter}${ghe.tenGhe}`}</span> : ''
                             }
                     </button>
                     )

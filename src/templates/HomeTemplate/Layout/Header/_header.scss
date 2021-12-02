@@ -17,17 +17,24 @@
             height: 50px;
         }
 
-        .header_link_item {
-            padding: 0 15px 0 15px;
-            a {
-                @include styleText($color-black-1 !important, $fs-20);
-            }
-            &:hover a {
-                color: $color-red-title !important;
-                transition: 0.3s all;
-
+        ul.header_link_list {
+            display: flex;
+            .header_link_item {
+                padding: 0 15px 0 15px;
+             
+                list-style-type: none;
+              
+                a {
+                    @include styleText($color-black-1 !important, $fs-20);
+                }
+                &:hover a {
+                    color: $color-red-title !important;
+                    transition: 0.3s all;
+    
+                }
             }
         }
+
 
         & .userLogin {
             span .white_user {

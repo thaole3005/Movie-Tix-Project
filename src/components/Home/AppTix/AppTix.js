@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -72,12 +72,12 @@ export default function AppTix() {
                     >
                         {
                             arrImgSlidePhone.map((item, index) => {
-                                return <>
+                                return <Fragment key={index}>
                                     <SwiperSlide>
                                         <img src={item.imgSlide} className="w-100 img_phone_slide"/>
                                     </SwiperSlide>
 
-                                </>
+                                </Fragment>
                             })
                         }
                     </Swiper>
