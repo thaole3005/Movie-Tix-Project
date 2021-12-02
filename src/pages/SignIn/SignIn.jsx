@@ -18,11 +18,13 @@ function SignIn() {
   };
 
   useEffect(() => {
+    console.log("status", status)
     if (!isLoading && !isLoggedIn && status === 'login_fail') {
       message.error("Login Fail");
     } else if (!isLoading && isLoggedIn && status === 200) {
       message.success("Login Success");
-      history.push("/");
+      // history.push("/");
+      history.goBack();
     }
   }, [history, isLoading, isLoggedIn, status]);
 

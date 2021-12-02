@@ -50,7 +50,7 @@ export default function Footer() {
                             <div className="partner_list d-flex">
                             {
                                arrPartner.map((partner, index) => {
-                                   return  <div className="m-1 p-1 partner_item">
+                                   return  <div className="m-1 p-1 partner_item" key={index}>
                                        <a href="http://" target="_blank" style ={{}}>
                                             <img src = {partner.logo} alt="partner"/>
                                         </a>

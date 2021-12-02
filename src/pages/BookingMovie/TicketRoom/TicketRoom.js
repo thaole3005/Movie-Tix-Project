@@ -9,7 +9,7 @@ function TicketRoom(props) {
 
     const {thongTinPhim, danhSachGhe} = props.thongTinPhongVe;
     const { arrGheDangChon} = useSelector(state => state.QuanLyDatVeReducer);
-    console.log("arrGheDangChon", arrGheDangChon);
+    // console.log("arrGheDangChon", arrGheDangChon);
     
    let danhSachGheChunk = _.chunk(danhSachGhe, 16);
    console.log("danhSachGheChunk", danhSachGheChunk)

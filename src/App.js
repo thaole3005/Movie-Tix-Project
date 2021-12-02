@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { userRouter } from "./constant/Route";
+import BookingMovie from "./pages/BookingMovie/BookingMovie";
 import PublicRoute from "./routes/PublicRoute";
 
 export const history = createBrowserHistory();
@@ -29,6 +30,13 @@ function App() {
               />
             );
           })}
+
+
+          <Route
+            exact
+            path="/ticketroom/:maLichChieu"
+            component={BookingMovie}
+          />
 
           {false ? <Redirect to="/admin" /> : <Redirect to="/" />}
 

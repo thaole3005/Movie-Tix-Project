@@ -14,10 +14,7 @@ export const userRouter = [
     path: "/moviedetail/:movieId",
     component: React.lazy(() => import("../pages/MovieDetail/MovieDetail")),
   },
-  {
-    path: "/ticketroom/:maLichChieu",
-    component: React.lazy(() => import("../pages/BookingMovie/BookingMovie")),
-  },
+
 ];
 
 export const adminRouter = [

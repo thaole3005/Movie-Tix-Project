@@ -24,7 +24,7 @@ function SampleNextArrow(props) {
         className={className}
         style={{ ...style, display: "block",  }}
         onClick={onClick}
-      ><i class="fas fa-chevron-right"></i></div>
+      ><i className="fas fa-chevron-right"></i></div>
     );
   }
   
@@ -35,7 +35,7 @@ function SampleNextArrow(props) {
         className={className}
         style={{ ...style, display: "block",}}
         onClick={onClick}
-      ><i class="fas fa-chevron-left"></i></div>
+      ><i className="fas fa-chevron-left"></i></div>
     );
   }
   
@@ -94,14 +94,14 @@ export default function MovieShow(props) {
       <Tabs defaultActiveKey="0" centered>
           {
               arrType.map((tabType, index) => {      //tabType: đang chiếu, sắp chiếu
-                  return <>
+                  return (
                     <TabPane tab={tabMovieType(tabType)} key={index}>
                         
                         {
                             renderMovieShow(tabType)
                         }
                     </TabPane>
-                  </>
+              )
               })
           }
        

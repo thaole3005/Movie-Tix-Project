@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { layThongTinHeThongRapAction } from "../../../redux/actions/QuanLyRapAction";
 import { Tabs, Radio, Space } from "antd";
@@ -86,14 +86,14 @@ export default function ShowTimeBody(props) {
                                               <div className="d-flex lich_chieu_list">
                                               {
                                                   phim.lstLichChieuTheoPhim.slice(0,10).map((lichChieuItem, index) => {
-                                                    return <>
+                                                    return <Fragment key={index}>
                                                         <span className="lich_chieu_item">
                                                           <CalendarOutlined className="mr-2 text-danger" style ={{fontSize:18}}/>
                                                           <NavLink to={`/ticketroom/${lichChieuItem.maLichChieu}`} className="lich_chieu_navlink">
                                                           {moment(lichChieuItem.ngayChieuGioChieu).format('DD/MM/YYYY hh:mm A')}
                                                           </NavLink>
                                                         </span>
-                                                    </>
+                                                    </Fragment>
                                                   
                                                   })
                                                 }
