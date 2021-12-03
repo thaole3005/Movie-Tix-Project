@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import playBtn from "../../../assets/img/play.png";
+import Button from "../../../components/Button/Button";
 import PopupTrailerHOC from "../../../HOC/PopupHOC";
 import { OPEN_POPUP_TRAILER } from "../../../redux/actions/types/QuanLyPopupType";
 
@@ -77,6 +78,14 @@ export default function MovieTopSection(props) {
               </h4>
               <p>100 phút - 0 IMDb - 2D/Digital</p>
               {/* <Button name="mua vé"/> */}
+              <Button
+              onClick = {() => {
+                window.scrollTo({
+                  top: props.movieBottomSection_Height,
+                  behavior: "smooth",
+                });
+              }}
+              >Mua Vé</Button>
             </div>
 
             <div className="col-3"></div>

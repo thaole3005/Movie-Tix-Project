@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
@@ -53,12 +53,22 @@ TabPanel.propTypes = {
   }));
 
   
-export default function MovieBottomSection() {
+export default function MovieBottomSection(props) {
  
     const theme = useTheme();
     const [value, setValue] = React.useState(0);
     const classes = useStyles();
     
+    const movieBottomSection = useRef(null);
+    useEffect(() => {
+     
+      // console.log("height bottom", movieBottomSection.current.offsetTop);
+      //lấy chiều cao của MovieBottomSection so với top
+      let movieBottomHeight = movieBottomSection.current.offsetTop;
+      props.setMovieBottomSection_Height(movieBottomHeight);
+  
+  }, [])
+
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
@@ -69,7 +79,7 @@ export default function MovieBottomSection() {
 
 
     return (
-        <div className="container movie_bottom_section">
+        <div className="container movie_bottom_section" ref={movieBottomSection}>
         <Box sx={{ bgcolor: 'none', width: 600, margin: '0 auto'}}>
       <AppBar position="static" style={{boxShadow:"none", outline: 'none',backgroundColor:"transparent"}} >
         <Tabs

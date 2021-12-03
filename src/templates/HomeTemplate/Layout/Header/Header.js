@@ -14,6 +14,7 @@ export default function Header() {
 
   const renderUserLogin = () => {
     if(Object.keys(profile).length === 0) {
+      //chưa đăng nhập
       return (
         <div className="userLogin">
         <span>
@@ -31,6 +32,7 @@ export default function Header() {
       </div>
       )
     } else {
+      //đã đăng nhập
       return (
         <div className="userLogin">
           <span>

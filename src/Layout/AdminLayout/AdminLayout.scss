@@ -1,0 +1,18 @@
+.admin_layout {
+    margin-top: 70px;
+    .ant-layout-sider-children {
+        min-height:100vh;
+    }
+    li.ant-menu-item.ant-menu-item-selected {
+        margin: 0;
+    }
+    .antd_layout {
+        flex-direction: row;
+    }
+
+    .layout_content {
+        .admin_search_input {
+            float: right;
+        }
+    }
+}

@@ -94,6 +94,7 @@ export default function BookingResult(props) {
             <button className="booking_button ml-2" 
             onClick = {() => {
                 // dispatch(tiepTucMuaVeAction());
+                localStorage.removeItem("info_thanh_toan");
                 window.location.reload();
             }}
             >

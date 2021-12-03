@@ -1,0 +1,16 @@
+.style_button {
+    border: 2px solid $color-red-primary;
+    @include styleButton($color-red-primary, none, 8px, 15px, $border-radius);
+ 
+
+        @include styleText($color-white-0, $fs-18);
+  
+
+    &:hover {
+        @include btnHover($color-white-0, $color-red-primary, $color-white-0);
+      
+
+            @include styleText($color-red-primary, $fs-18);
+          
+    }
+}
