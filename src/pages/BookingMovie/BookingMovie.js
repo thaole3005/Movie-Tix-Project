@@ -22,51 +22,37 @@ export default function BookingMovie(props) {
     console.log("profile", profile)
     const history = useHistory();
 
-    // if (Object.keys(profile).length === 0) {
-    //     console.log("chưa có profile")
-    //     showConfirm("Bạn chưa đăng nhập?",
-    //      <p>Bạn cần đăng nhập để đặt vé</p>,
-    //      () => {
-    //          history.push("/login");
-    //      },
-
-    //      "Trang chủ",
-    //      "Đăng nhập"
-         
-    //      )
-         
-    // }
-
 
     const dispatch = useDispatch();
-
+    
 
     useEffect(() => {
-        if (Object.keys(profile).length === 0) {
-            console.log("chưa có profile")
-            showConfirm("Bạn chưa đăng nhập?",
-             <p>Bạn cần đăng nhập để đặt vé</p>,
-             () => {
-                 history.push("/login");
-             },
-    
-             "Trang chủ",
-             "Đăng nhập",
-             () => {
-                history.push("/");
-             }
-             
-             )
-             
+        const {maLichChieu} = props.match.params;
+        if (Object.keys(profile).length !== 0) {
+            //nếu user đã đăng nhập rồi thì mới lấy thông tin phòng vé
+            dispatch(layDanhSachPhongVeAction(maLichChieu));
         }
     }, [])
 
 
 
-    useEffect(() => {
-        const {maLichChieu} = props.match.params;
-        dispatch(layDanhSachPhongVeAction(maLichChieu));
-    }, [])
+    if (Object.keys(profile).length === 0) {
+        showConfirm("Bạn chưa đăng nhập?",
+        <p>Bạn cần đăng nhập để đặt vé</p>,
+        () => {
+            history.push("/login");
+        },
+        
+        "Trang chủ",
+        "Đăng nhập",
+        () => {
+            history.push("/");
+        }
+        
+        )
+        return null;
+    }
+
 
     return (
         <div className="booking_movie_section">

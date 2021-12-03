@@ -4,9 +4,11 @@ import { createBrowserHistory } from "history";
 import { Suspense } from "react";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { userRouter } from "./constant/Route";
+import { userRouter, adminRouter } from "./constant/Route";
 import BookingMovie from "./pages/BookingMovie/BookingMovie";
 import PublicRoute from "./routes/PublicRoute";
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import PrivateRoute from './routes/PrivateRoute';
 
 export const history = createBrowserHistory();
 
@@ -14,6 +16,7 @@ function App() {
   return (
     <Suspense fallback={<Spin />}>
       <BrowserRouter>
+      <ScrollToTop/>
         <Switch>
           {userRouter.map((user, index) => {
             const Component = user.component;
@@ -37,6 +40,25 @@ function App() {
             path="/ticketroom/:maLichChieu"
             component={BookingMovie}
           />
+
+
+          {adminRouter.map((router, index) => {
+            const Component = router.component;
+            return (
+              <Route
+                exact
+                key={`router-admin-${index}`}
+                path={router.path}
+                render={(propsRoute) => (
+                  <PrivateRoute>
+                    <Component {...propsRoute}/>
+                  </PrivateRoute>
+                )}
+              />
+            );
+          })}
+
+
 
           {false ? <Redirect to="/admin" /> : <Redirect to="/" />}
 

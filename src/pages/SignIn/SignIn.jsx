@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 import { actionLogin } from "../../redux/thunk/auth.thunk";
+import {useLocation} from "react-router-dom";
 
 function SignIn() {
   const dispatch = useDispatch();
   const history = useHistory();
+  const {pathname} = useLocation();
 
   const {  isLoading, isLoggedIn, status } = useSelector(
     (state) => state.authReducer
@@ -18,13 +20,18 @@ function SignIn() {
   };
 
   useEffect(() => {
-    console.log("status", status)
     if (!isLoading && !isLoggedIn && status === 'login_fail') {
       message.error("Login Fail");
     } else if (!isLoading && isLoggedIn && status === 200) {
       message.success("Login Success");
       // history.push("/");
+      // if(pathname === "/login" || pathname.includes("ticketroom")) {
+
+      //   history.goBack();
+      // }
+
       history.goBack();
+
     }
   }, [history, isLoading, isLoggedIn, status]);
 
