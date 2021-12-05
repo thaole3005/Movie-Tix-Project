@@ -1,0 +1,67 @@
+import React, { useState } from "react";
+import {
+  Form,
+  Input,
+  Button,
+  Radio,
+  Select,
+  Cascader,
+  DatePicker,
+  InputNumber,
+  TreeSelect,
+  Switch,
+
+} from "antd";
+
+export default function AddNewFilm(props) {
+  return (
+    <div className="mt-4">
+      <h2 className="text-center">Trang tạo phim</h2>
+      <Form
+        labelCol={{
+          span: 4,
+        }}
+        wrapperCol={{
+          span: 14,
+        }}
+        layout="horizontal"
+        size="default"
+      >
+        <Form.Item label="Tên Phim">
+          <Input name="tenPhim"/>
+        </Form.Item>
+        <Form.Item label="Trailer">
+          <Input name="trailer"/>
+        </Form.Item>
+        <Form.Item label="Mô tả">
+          <Input name="moTa"/>
+        </Form.Item>
+        <Form.Item label="Ngày khởi chiếu">
+            <DatePicker />
+        </Form.Item>
+
+        <Form.Item label="Đang chiếu" valuePropName="checked">
+          <Switch />
+        </Form.Item>
+        <Form.Item label="Sắp chiếu" valuePropName="checked">
+          <Switch />
+        </Form.Item>
+        <Form.Item label="Hot" valuePropName="checked">
+          <Switch />
+        </Form.Item>
+
+        <Form.Item label="Số sao">
+          <InputNumber />
+        </Form.Item>
+
+        <Form.Item label="Hình ảnh">
+          <input type="file"/>
+        </Form.Item>
+
+        <Form.Item label="Tác vụ">
+          <Button>Thêm phim</Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
+}

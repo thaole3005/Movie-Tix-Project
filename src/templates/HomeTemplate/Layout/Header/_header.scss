@@ -37,6 +37,13 @@
 
 
         & .userLogin {
+
+            .hidden_button {
+                border: none !important;
+                outline: none !important;
+                box-shadow: none !important;
+            
+            }
             span .white_user {
                 width: 35px;
                 height: 35px;
@@ -53,8 +60,6 @@
                 }
             }
         }
-
-       
     }
 }
 

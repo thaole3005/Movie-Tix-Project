@@ -3,10 +3,35 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from "react-router";
 import { NavLink } from "react-router-dom";
 import logo from "../../../../assets/img/logo.png";
+import { Menu, Dropdown, Button } from 'antd';
+
+
+const menuUser = (
+  <Menu>
+    <Menu.Item>
+      <NavLink to="/userdetail">My Account</NavLink>
+    </Menu.Item>
+
+  </Menu>
+);
+
+const menuAdmin = (
+  <Menu>
+    <Menu.Item>
+      <NavLink to="/userdetail">My Account</NavLink>
+    </Menu.Item>
+    <Menu.Item>
+      <NavLink to="/admin/dashboard">Admin</NavLink>
+    </Menu.Item>
+  
+  </Menu>
+);
+
+
 
 export default function Header() {
   const history = useHistory();
-  const {profile} = useSelector((state) => state.authReducer);
+  const {profile, isAuthenticated} = useSelector((state) => state.authReducer);
 
   const handleDirectPage = () => {
     history.push("/login");
@@ -33,18 +58,29 @@ export default function Header() {
       )
     } else {
       //đã đăng nhập
+      let menu = menuUser;
+
+      //nếu là admin 
+      if(isAuthenticated) {
+        menu = menuAdmin;
+      }
+
       return (
         <div className="userLogin">
-          <span>
-          <img
-                className="white_user"
-                src={`https://ui-avatars.com/api/?name=${profile.taiKhoan}`}
-                alt ={profile.taiKhoan}
-              />
-          </span>
-          <span className="mx-2" onClick={handleDirectPage}>
-          {profile.taiKhoan}
-          </span>
+          <Dropdown overlay={menu} placement="bottomRight" arrow>
+            <Button className="hidden_button">
+              <span>
+              <img
+                    className="white_user"
+                    src={`https://ui-avatars.com/api/?name=${profile.taiKhoan}`}
+                    alt ={profile.taiKhoan}
+                  />
+              </span>
+            <span className="mx-2" onClick={handleDirectPage}>
+            {profile.taiKhoan}
+            </span>
+              </Button>
+          </Dropdown>
           <span> | </span>
           <span className="ml-2">Đăng xuất</span>
       </div>

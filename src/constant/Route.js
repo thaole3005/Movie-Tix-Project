@@ -16,6 +16,10 @@ export const userRouter = [
     path: "/moviedetail/:movieId",
     component: React.lazy(() => import("../pages/MovieDetail/MovieDetail")),
   },
+  {
+    path: "/userdetail",
+    component: React.lazy(() => import("../pages/UserDetail/UserDetail")),
+  },
 
 ];
 
@@ -33,6 +37,16 @@ export const adminRouter = [
     path: "/admin/films",
     // component: <Films/>
     component: React.lazy(() => import("../pages/Admin/Films/Films")),
+  },
+  {
+    path: "/admin/films/editfilm/:movieId",
+    // component: <Films/>
+    component: React.lazy(() => import("../pages/Admin/Films/EditFilm/EditFilm")),
+  },
+  {
+    path: "/admin/films/showtime/:movieId",
+    // component: <Films/>
+    component: React.lazy(() => import("../pages/Admin/Films/ShowTime/ShowTime")),
   },
   {
     path: "/admin/films/addnewfilm",

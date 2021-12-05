@@ -20,10 +20,18 @@
 
 
 //Page
+
+//-----User-----
 @import "../pages/Home/HomeCarousel/HomeCarousel";
 @import "../pages/MovieDetail/MovieDetail";
 @import "../pages/BookingMovie/BookingMovie.scss";
 @import "../pages/SignIn/SignIn";
+@import "../pages/UserDetail/UserDetail.scss";
+
+//-----Admin-----
+@import "../pages/Admin/Films/Film.scss";
+
+
 
 //!components:
 //* page Home

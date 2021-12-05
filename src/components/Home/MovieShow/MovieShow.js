@@ -59,23 +59,25 @@ const settings = {
 
 export default function MovieShow(props) {
 
-    let {arrMovie} = props;
-    // console.log("arrMovie", arrMovie);
+    const {arrMovie} = props;
+    console.log("arrMovie in MovieShow", arrMovie);
 
 
     const renderMovieShow = (tabType) => {
+      let arrMovieRender;
         if(tabType === "Đang chiếu") {
-            arrMovie = arrMovie?.filter(phim => phim.dangChieu === true);
-            console.log("arrMovie đang chiếu", arrMovie);
+           arrMovieRender = arrMovie?.filter(phim => phim.dangChieu === true);
+            console.log("arrMovie đang chiếu", arrMovieRender);
         } else {
-            arrMovie = arrMovie?.filter(phim => phim.sapChieu === true);
-            console.log("arrMovie sắp chiếu", arrMovie);
+          arrMovieRender = arrMovie?.filter(phim => phim.sapChieu === true);
+            console.log("arrMovie sắp chiếu", arrMovieRender);
 
         }
+
         return (
             <Slider {...settings}>
                {
-                   arrMovie.map((phim, index) => {
+                   arrMovieRender?.map((phim, index) => {
                        return (
                            <div key={index} className="px-3 mt-3">
                                <MovieItem detailMovieItem ={phim}/>

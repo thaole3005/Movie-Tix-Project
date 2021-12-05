@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function EditFilm(props) {
+export default function ShowTime(props) {
     const {movieId} = props.match.params;
-    console.log("moviedId", movieId);
+
     return (
         <div>
-            EditFilm {movieId}
+            <h2>Trang tạo lịch chiếu {movieId}</h2>
         </div>
     )
 }
