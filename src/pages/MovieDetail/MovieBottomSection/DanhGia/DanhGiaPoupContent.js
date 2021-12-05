@@ -1,8 +1,10 @@
 import React from 'react'
 import { Fragment, useReducer } from 'react';
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { CLOSE_POPUP_TRAILER } from '../../../../redux/actions/types/QuanLyPopupType';
 import { AddDanhGiaAction } from './../../../../redux/actions/QuanLyPopupAction';
+import { showConfirm } from './../../../../components/ConfirmAntd/ConfirmAntd';
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -56,8 +58,11 @@ const ratingReducer = (state, action) => {
 
 function DanhGiaPoupContent(props) {
     const [state, dispatch] = useReducer(ratingReducer, initialState);
-    console.log("state", state)
+    console.log("state", state);
     const {start, post, error} = state;
+
+    const {profile} = useSelector((state) => state.authReducer);
+    const history = useHistory();
 
 
     const renderStart = () => {
@@ -161,7 +166,24 @@ function DanhGiaPoupContent(props) {
                             }
                             }
                     >Đóng</button>
-                    <button className="btn_dang_popup" onClick={() => handleDanhGia(start, post)}>Đăng</button>
+                    <button className="btn_dang_popup" onClick={() =>{
+                        //phải đăng nhập mới được đánh giá
+                        if(Object.keys(profile).length === 0) {
+                            showConfirm("Bạn chưa đăng nhập?",
+                            <p>Bạn cần đăng nhập để đánh giá</p>,
+                            () => {
+                                history.push("/login");
+                            },
+                            
+                            "Hủy",
+                            "Đăng nhập",
+                         
+                            )
+                        } else {
+                            handleDanhGia(start, post)
+                        }
+                        
+                        }}>Đăng</button>
                 </div>
             </div>
         </div>

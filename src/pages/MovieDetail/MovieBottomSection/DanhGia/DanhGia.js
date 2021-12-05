@@ -11,6 +11,9 @@ function DanhGia(props) {
     const {arrDanhGia} = useSelector(state => state.DanhGiaReducer);
     console.log("arrDanhGia", arrDanhGia)
 
+    const {profile} = useSelector((state) => state.authReducer);
+
+
     return (
         <div className="danh_gia_section">
          
@@ -43,18 +46,18 @@ function DanhGia(props) {
                 {
                     arrDanhGia.reverse().map((danhGiaItem, index) => {
                         return (
-                        <div className="cmt_item">
+                        <div className="cmt_item" key={index}>
                             <div className="cmt_item_header">
                                 <div>
-                                    <img className="white_user" src="https://ui-avatars.com/api/?name=Kieu"/> 
+                                    <img className="white_user" src={`https://ui-avatars.com/api/?name=${profile.taiKhoan}`}/> 
                                 </div>
                                 <div className="ml-3">
-                                    <p className="cmt_item_name">Kiều Trang</p>
+                                    <p className="cmt_item_name">{profile.taiKhoan}</p>
                                     <span className="cmt_item_time">Vừa xong</span>
                                 </div>
                                 <div className="cmt_item_start">
                                     <p className="text-center">{danhGiaItem.start/2}</p>
-                                    {Array.from(Array(Math.floor(danhGiaItem.start/2)).keys()).map((start, index) => {
+                                    {Array.from(Array(Math.ceil(danhGiaItem.start/2)).keys()).map((start, index) => {
                                     return <i className="fa fa-star icon-star" key={index} />
                                 })}
                                 <span className="ml-1">1/2</span>

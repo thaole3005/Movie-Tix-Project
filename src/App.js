@@ -2,7 +2,7 @@
 import { Spin } from "antd";
 import { createBrowserHistory } from "history";
 import { Suspense } from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch, Router } from "react-router-dom";
 import "./App.css";
 import { userRouter, adminRouter } from "./constant/Route";
 import BookingMovie from "./pages/BookingMovie/BookingMovie";
@@ -15,7 +15,7 @@ export const history = createBrowserHistory();
 function App() {
   return (
     <Suspense fallback={<Spin />}>
-      <BrowserRouter>
+      <Router history ={history}>
       <ScrollToTop/>
         <Switch>
           {userRouter.map((user, index) => {
@@ -79,7 +79,7 @@ function App() {
           <HomeTemplate exact path="/" Component={Home} />
           <Route exact path="/login" render={() => <SignIn />} /> */}
         </Switch>
-      </BrowserRouter>
+      </Router>
     </Suspense>
   );
 }
