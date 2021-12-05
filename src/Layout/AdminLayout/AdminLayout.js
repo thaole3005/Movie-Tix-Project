@@ -10,10 +10,16 @@ import {
   FileOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { NavLink } from 'react-router-dom';
 import { Input } from 'antd';
+import { NavLink,  useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { LayDanhSachPhimAction } from './../../redux/actions/QuanLyPhimActions';
 
 function AdminLayout({ children }) {
+  let {pathname} = useLocation();
+  // console.log("pathname", pathname)
+
+  const dispatch = useDispatch();
 
   const [collapsed, setCollapsed] = useState(false);
   const onCollapse = (collapsed) => {
@@ -23,6 +29,13 @@ function AdminLayout({ children }) {
 
   const { SubMenu } = Menu;
 
+  const inputSearchChange = (e) => {
+    console.log("search Value", e.target.value);
+    if(pathname === "/admin/films") {
+      //search ở trang phim
+      dispatch(LayDanhSachPhimAction(e.target.value.trim()));
+    }
+  }
 
   return (
 
@@ -73,7 +86,7 @@ function AdminLayout({ children }) {
           <Content>
               <div className="layout_content">
                 <div className="clearfix">
-                  <Input size="large" placeholder="Search" style={{width: 300}} className="admin_search_input"/>
+                  <Input size="large" placeholder="Search" style={{width: 300}} className="admin_search_input" onChange ={inputSearchChange}/>
                 </div>
                 {children}
               </div>
