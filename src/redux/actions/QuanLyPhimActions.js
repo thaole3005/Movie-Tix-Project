@@ -1,6 +1,7 @@
 import { http } from '../../util/setting';
 import { GROUP_ID, STATUS_CODE } from './../../util/setting';
 import { LAY_DANH_SACH_FULL_PHIM, LAY_THONG_TIN_PHIM} from './types/QuanLyPhimType';
+import { showMessage } from './../../components/ShowMessage/ShowMessage';
 
 
 export const LayDanhSachPhimAction = (tenPhim = '') => { //nếu tên phim là rỗng thì có nghĩa là lấy full danh sách phim
@@ -44,3 +45,38 @@ export const layThongTinPhimAction = (maPhim) => {
 
 
 
+export const xoaPhimAction = (maPhim) => {
+    return async (dispatch) => {
+        try {
+            const {data, status} = await http.delete(`/api/QuanLyPhim/XoaPhim?MaPhim=${maPhim}`);
+            // console.log("data in xoaPhimAction", data);
+            if(status === STATUS_CODE.SUCCESS) {
+                //xóa thành công thì gọi action call api lấy arrMovie mới nhất
+                showMessage("success", "Xóa phim thành công");
+                dispatch(LayDanhSachPhimAction())
+            }
+        } catch (error) {
+            showMessage("error", "Xóa phim thất bại");
+            console.log("error", error.response?.data);
+        }
+    }
+}
+
+
+
+export const themPhimUploadHinhAction = (formData) => {
+    return async (dispatch) => {
+        try {
+            const {data, status} = await http.post('/api/QuanLyPhim/ThemPhimUploadHinh', formData);
+            console.log("data in themPhimUploadHinhAction", data);
+            if(status === STATUS_CODE.SUCCESS) {
+                //thêm phim thành công thì gọi action call api lấy arrMovie mới nhất
+                showMessage("success", "Thêm phim thành công");
+                dispatch(LayDanhSachPhimAction())
+            }
+        } catch (error) {
+            showMessage("error", "Thêm phim thất bại");
+            console.log("error", error.response?.data);
+        }
+    }
+}
