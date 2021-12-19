@@ -8,6 +8,7 @@ import SeatNote from './SeatNote';
 function TicketRoom(props) {
 
     const {thongTinPhim, danhSachGhe} = props.thongTinPhongVe;
+    console.log("thongTinPhim", thongTinPhim);
     const { arrGheDangChon} = useSelector(state => state.QuanLyDatVeReducer);
     // console.log("arrGheDangChon", arrGheDangChon);
     
@@ -21,12 +22,13 @@ function TicketRoom(props) {
             <div className="ticket_room_header">
                 <div className="d-flex align-items-center">
                     <div className="logo_rap">
-                        <img src={thongTinPhim?.hinhAnh} style={{width:50, height:60}} alt={thongTinPhim?.tenPhim}/>
+                        <img src={thongTinPhim?.hinhAnh} style={{width:50, height:70}} alt={thongTinPhim?.tenPhim}/>
                     </div>
                     <div className="movie_info ml-2">
                         <p>{thongTinPhim?.tenPhim}</p>
                         <p>{thongTinPhim?.tenCumRap}</p>
                         <p>100 phút - {thongTinPhim?.gioChieu} - {thongTinPhim?.tenRap}</p>
+                        <p>Ngày chiếu - {thongTinPhim?.ngayChieu}</p>
                     </div>
                     <div className="ml-auto">
                         <p>Thời gian giữ ghế</p>

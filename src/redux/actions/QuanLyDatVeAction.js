@@ -2,6 +2,7 @@
 import { http, STATUS_CODE } from '../../util/setting';
 import { CHON_GHE, LAY_THONG_TIN_PHONG_VE, CHANGE_PAGE, TIEP_TUC_MUA_VE } from './types/QuanLyDatVeType';
 import Swal from 'sweetalert2';
+import { showMessage } from './../../components/ShowMessage/ShowMessage';
 
 export const layDanhSachPhongVeAction = (maLichChieu) => {
     return async dispatch => {
@@ -63,6 +64,25 @@ export const datVeAction = (thongTinDatVe) => {
             }
 
         } catch (error) {
+            console.log("error", error.response?.data);
+        }
+    }
+}
+
+
+
+
+export const taoLichChieuAction = (lichChieu) => {
+    return async (dispatch) => {
+        try {
+            const {data, status} = await http.post('/api/QuanLyDatVe/TaoLichChieu', lichChieu);
+            console.log("data in taoLichChieuAction", data);
+            if(status === STATUS_CODE.SUCCESS) {
+                //thêm phim thành công thì gọi action call api lấy arrMovie mới nhất
+                showMessage("success", "Tạo lịch chiếu thành công");
+            }
+        } catch (error) {
+            showMessage("error", "Tạo lịch chiếu thất bại");
             console.log("error", error.response?.data);
         }
     }

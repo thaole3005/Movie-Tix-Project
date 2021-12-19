@@ -84,7 +84,7 @@ const columns = [
       render: (text, phim, index) => {
           return <div key={index} className="text-center">
               <NavLink to={`/admin/films/editfilm/${phim.maPhim}`} className="edit_button"><EditOutlined /></NavLink>
-              <NavLink to={`/admin/films/showtime/${phim.maPhim}`} className="showtime_button mx-1"><CalendarOutlined /></NavLink>
+              <NavLink to={`/admin/films/showtime/${phim.maPhim}/${phim.tenPhim}`} className="showtime_button mx-1"><CalendarOutlined /></NavLink>
               {/* <button className="delete_button mx-1">
                   <DeleteOutlined />
               </button> */}

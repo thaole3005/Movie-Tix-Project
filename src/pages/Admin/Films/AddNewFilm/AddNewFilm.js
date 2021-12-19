@@ -101,6 +101,9 @@ export default function AddNewFilm(props) {
     formik.setFieldValue("hinhAnh", file)
 
   }
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  }
 
 
   return (
@@ -115,11 +118,13 @@ export default function AddNewFilm(props) {
         }}
         layout="horizontal"
         size="default"
-        onSubmitCapture = {formik.handleSubmit}
+        // onSubmitCapture = {formik.handleSubmit}
         onFinish = {formik.handleSubmit}
+        onFinishFailed={onFinishFailed}
       >
         <Form.Item 
         label="Tên Phim"
+        name="tenPhim"
         rules={[
           {
             required: true,
@@ -131,6 +136,7 @@ export default function AddNewFilm(props) {
         </Form.Item>
         <Form.Item 
         label="Trailer"
+        name="trailer"
         rules={[
           {
             required: true,
@@ -141,6 +147,7 @@ export default function AddNewFilm(props) {
           <Input name="trailer" onChange={formik.handleChange}/>
         </Form.Item>
         <Form.Item label="Mô tả"
+        name="moTa"
         rules={[
           {
             required: true,
@@ -152,6 +159,7 @@ export default function AddNewFilm(props) {
         </Form.Item>
         <Form.Item 
         label="Ngày khởi chiếu"
+        name="ngayKhoiChieu"
         rules={[
           {
             required: true,
@@ -162,17 +170,18 @@ export default function AddNewFilm(props) {
             <DatePicker format ={"DD/MM/YYYY"} onChange={handleChangeDatePicker}/>
         </Form.Item>
 
-        <Form.Item label="Đang chiếu" valuePropName="checked">
+        <Form.Item label="Đang chiếu" valuePropName="checked" name="dangChieu">
           <Switch name="dangChieu" onChange = { handleChangeSwitch("dangChieu")}/>
         </Form.Item>
-        <Form.Item label="Sắp chiếu" valuePropName="checked">
+        <Form.Item label="Sắp chiếu" valuePropName="checked" name="sapChieu">
           <Switch name="sapChieu" onChange={handleChangeSwitch("sapChieu")}/>
         </Form.Item>
-        <Form.Item label="Hot" valuePropName="checked">
+        <Form.Item label="Hot" valuePropName="checked" name="hot">
           <Switch name="hot" onChange={handleChangeSwitch("hot")}/>
         </Form.Item>
 
         <Form.Item label="Số sao"
+        name="danhGia"
         rules={[
           {
             required: true,
@@ -189,7 +198,7 @@ export default function AddNewFilm(props) {
         </Form.Item>
 
         <Form.Item label="Tác vụ">
-          <Button htmlType="submit">Thêm phim</Button>
+          <Button htmlType="submit" >Thêm phim</Button>
         </Form.Item>
       </Form>
     </div>

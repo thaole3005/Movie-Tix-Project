@@ -1,3 +1,57 @@
 .userdetail_section {
     margin-top: 70px;
+
+    display: flex;
+
+    .userdetail_menu {
+        min-width: 20%;
+        text-align: center;
+        height: calc(100vh - 70px);
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .userdetail_menu_content {
+         
+            .userdetail_avatar {
+                .ant-avatar {
+                    width: 60px !important;
+                    height: 60px !important;
+                }
+                .user_name {
+                    color: $color-red-primary;
+                }
+            }
+            .thongtinchung {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                h4 {
+                    color: $color-red-primary;
+                }
+                span.anticon {
+                    font-size: 20px;
+                    color: $color-red-primary;
+                }
+            }
+
+            .changePage_section {
+                .changePage_btn {
+                    width: 100%;
+                    @include styleButton($color-black-4, none, 15px, 15px, $border-radius);
+                    border: none;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                & .active {
+                    @include styleButton($color-red-primary, none, 15px, 15px, $border-radius);
+                    color: $color-white-0;
+                    
+                }
+            }
+        }
+   
+    }
 }
