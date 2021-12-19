@@ -44,7 +44,7 @@ export const adminRouter = [
     component: React.lazy(() => import("../pages/Admin/Films/EditFilm/EditFilm")),
   },
   {
-    path: "/admin/films/showtime/:movieId",
+    path: "/admin/films/showtime/:movieId/:tenphim",
     // component: <Films/>
     component: React.lazy(() => import("../pages/Admin/Films/ShowTime/ShowTime")),
   },

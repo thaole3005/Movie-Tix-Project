@@ -7,7 +7,7 @@ import MovieTopSection from './MovieTopSection/MovieTopSection.jsx';
 export default function MovieDetail(props) {
     console.log("props in MovieDetail", props);
     const {movieInfor} = useSelector(state => state.QuanLyPhimReducer);
-    // console.log("movieInfor", movieInfor);
+    console.log("movieInfor", movieInfor);
 
     const [movieBottomSection_Height, setMovieBottomSection_Height] = useState(0);
     const dispatch = useDispatch();
